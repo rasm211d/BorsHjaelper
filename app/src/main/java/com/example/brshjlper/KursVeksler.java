@@ -3,11 +3,15 @@ package com.example.brshjlper;
 import java.util.Observable;
 
 public class KursVeksler extends Observable {
-    private int antalAktier = 1;
+    private double antalAktier = 1.0;
     private double koebskurs = 1.0; //Penge
     private double kurtageStart = 29; //Penge
     private double samletAktieVærdi = antalAktier*koebskurs;
     private double kurtage; //procent
+
+    public KursVeksler(){
+    }
+
 
 
     public void calcKurtage() {
@@ -16,11 +20,11 @@ public class KursVeksler extends Observable {
         }
     }
 
-    public void setAntalAktier(int antalAktier) {
+    public void setAntalAktier(Double antalAktier) {
         this.antalAktier = antalAktier;
     }
 
-    public int getAntalAktier() {
+    public double getAntalAktier() {
         return antalAktier;
     }
 
@@ -32,6 +36,14 @@ public class KursVeksler extends Observable {
         return koebskurs;
     }
 
+    public void setKurtageStart(double kurtageStart) {
+        this.kurtageStart = kurtageStart;
+    }
+
+    public double getKurtageStart() {
+        return kurtageStart;
+    }
+
     public double getKurtage() {
         return kurtage;
     }
@@ -40,6 +52,5 @@ public class KursVeksler extends Observable {
         this.kurtage = kurtage;
     }
 
-    public KursVeksler(){
-    }
+
 }

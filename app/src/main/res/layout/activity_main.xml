@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:hint="Kurtage i %"
             android:layout_weight="1"
+            android:inputType="numberDecimal"
             />
 
         <EditText
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:hint="Startkurtage"
             android:layout_weight="1"
+            android:inputType="numberDecimal"
             />
     </LinearLayout>
 
