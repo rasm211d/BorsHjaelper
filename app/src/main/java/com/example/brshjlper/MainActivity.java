@@ -34,11 +34,14 @@ public class MainActivity extends AppCompatActivity implements Observer {
         final TextView nulProcent = findViewById(R.id.SalgskursNul);
         final TextView enProcent = findViewById(R.id.SalgskursEn);
         final TextView femProcent = findViewById(R.id.SalgskursFem);
+        final TextView tiProcent = findViewById(R.id.SalgskursTi);
+        final TextView femOgTyveProcent = findViewById(R.id.SalgskursFemOgTyve);
 
         final TextView gevinstNul = findViewById(R.id.gevinst0);
         final TextView gevinstEn = findViewById(R.id.gevinst1);
         final TextView gevinstFem = findViewById(R.id.gevinst5);
-
+        final TextView gevinstTi = findViewById(R.id.gevinst10);
+        final TextView gevinstFemogTyve = findViewById(R.id.gevinst25);
 
 
 
@@ -106,7 +109,13 @@ public class MainActivity extends AppCompatActivity implements Observer {
                 String femProcentString = Double.valueOf(femProcentDouble).toString();
                 femProcent.setText(femProcentString);
 
+                double tiProcentDouble = kursVeksler.calc(1.10);
+                String tiProcentString = Double.valueOf(tiProcentDouble).toString();
+                tiProcent.setText(tiProcentString);
 
+                double femOgTyveDouble = kursVeksler.calc(1.25);
+                String femOgTyveString = Double.valueOf(femOgTyveDouble).toString();
+                femOgTyveProcent.setText(femOgTyveString);
 
 
                 double nulProcentGevinst = kursVeksler.gevinst(1.00);
@@ -120,6 +129,14 @@ public class MainActivity extends AppCompatActivity implements Observer {
                 double femProcentGevinst = kursVeksler.gevinst(1.05);
                 String femProcentGevinstString = Double.valueOf(femProcentGevinst).toString();
                 gevinstFem.setText(femProcentGevinstString);
+
+                double tiProcentGevinst = kursVeksler.gevinst(1.10);
+                String tiProcentGevinstString = Double.valueOf(tiProcentGevinst).toString();
+                gevinstTi.setText(tiProcentGevinstString);
+
+                double femOgtyveProcentGevinst = kursVeksler.gevinst(1.25);
+                String femOgtyveProcentGevinstString = Double.valueOf(femOgtyveProcentGevinst).toString();
+                gevinstFemogTyve.setText(femOgtyveProcentGevinstString);
 
             }
 
