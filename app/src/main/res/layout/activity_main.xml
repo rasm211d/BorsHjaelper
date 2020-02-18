@@ -18,7 +18,7 @@
             android:id="@+id/kurtage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kurtage i %"
+            android:hint="Brokerage in %"
             android:layout_weight="1"
             android:inputType="numberDecimal"
             />
@@ -27,7 +27,7 @@
             android:id="@+id/kurtageStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Startkurtage"
+            android:hint="Start Brokerage"
             android:layout_weight="1"
             android:inputType="numberDecimal"
             />
@@ -46,7 +46,7 @@
             android:id="@+id/antalAktier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Antal aktier"
+            android:hint="Amount of Shares"
             android:inputType="number"
             android:layout_weight="1"
             />
@@ -55,7 +55,7 @@
             android:id="@+id/koebskurs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="købskurs i penge"
+            android:hint="Stock Price"
             android:inputType="numberDecimal"
             android:layout_weight="1"
             />
@@ -73,12 +73,58 @@
         android:background="@android:color/darker_gray"
 
         />
+    <LinearLayout
+        android:layout_below="@+id/button"
+        android:id="@+id/infoLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#DCDCDC"
+            android:textSize="12sp"
+            android:text="Capital gain"
+            android:gravity="center"
+            android:layout_weight="4"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:text="Selling rate for capital gain"
+            android:background="#DCDCDC"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:text="Your gain"
+            android:background="#DCDCDC"
+            />
+
+
+
+
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/nulProcent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/infoLine"
         android:padding="16dp"
         >
         <TextView
@@ -88,7 +134,7 @@
             android:textSize="32sp"
             android:text="0%"
             android:gravity="center"
-            android:layout_weight="6"
+            android:layout_weight="4"
             />
 
         <TextView
@@ -97,9 +143,20 @@
             android:layout_height="40dp"
             android:textSize="32sp"
             android:gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:background="#f0ffff"
             />
+
+        <TextView
+            android:id="@+id/gevinst0"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#32cd32"
+            />
+
     </LinearLayout>
 
     <LinearLayout
@@ -116,7 +173,7 @@
             android:textSize="32sp"
             android:text="1%"
             android:gravity="center"
-            android:layout_weight="6"
+            android:layout_weight="4"
             />
 
         <TextView
@@ -125,9 +182,19 @@
             android:layout_height="40dp"
             android:textSize="32sp"
             android:gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:background="#f0ffff"
             />
+        <TextView
+            android:id="@+id/gevinst1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#32cd32"
+            />
+
     </LinearLayout>
 
 
@@ -138,25 +205,35 @@
         android:layout_below="@+id/enProcent"
         android:padding="16dp"
         >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@android:color/darker_gray"
-        android:textSize="32sp"
-        android:text="5%"
-        android:gravity="center"
-        android:layout_weight="6"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/darker_gray"
+            android:textSize="32sp"
+            android:text="5%"
+            android:gravity="center"
+            android:layout_weight="4"
+            />
 
-    <TextView
-        android:id="@+id/SalgskursFem"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:textSize="32sp"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:background="#f0ffff"
-        />
+        <TextView
+            android:id="@+id/SalgskursFem"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#f0ffff"
+            />
+        <TextView
+            android:id="@+id/gevinst5"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#32cd32"
+            />
+
 
 
     </LinearLayout>

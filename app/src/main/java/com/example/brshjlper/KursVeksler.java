@@ -53,4 +53,13 @@ public class KursVeksler extends Observable {
     }
 
 
+    public double calc(double gain) {
+        return (antalAktier*koebskurs*gain+(kurtageStart*2))/antalAktier;
+    }
+
+    public double gevinst(double gain) {
+        return (antalAktier*koebskurs*gain+(kurtageStart*2))-(antalAktier*koebskurs)-(kurtageStart*2);
+    }
+
+
 }
