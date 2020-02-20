@@ -8,17 +8,45 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:paddingTop="8dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/brokerage_fee"
+            android:layout_weight="1"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_brokerage"
+            android:layout_weight="1"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/linearLayoutTop"
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:orientation="horizontal"
         >
         <EditText
             android:id="@+id/kurtage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Brokerage in %"
+            android:autofillHints="@string/brokerage_fee"
+            android:hint="@string/brokerage_fee"
             android:layout_weight="1"
             android:inputType="numberDecimal"
             />
@@ -27,17 +55,41 @@
             android:id="@+id/kurtageStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Start Brokerage"
+            android:autofillHints="@string/start_brokerage"
+            android:hint="@string/start_brokerage"
             android:layout_weight="1"
             android:inputType="numberDecimal"
             />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayoutsecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/shares"
+            android:layout_weight="1"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stock_price"
+            android:layout_weight="1"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/linearLayoutsecond"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:orientation="horizontal"
@@ -46,7 +98,8 @@
             android:id="@+id/antalAktier"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Amount of Shares"
+            android:autofillHints="@string/shares"
+            android:hint="@string/shares"
             android:inputType="number"
             android:layout_weight="1"
             />
@@ -55,7 +108,8 @@
             android:id="@+id/koebskurs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stock Price"
+            android:hint="@string/stock_price"
+            android:autofillHints="@string/stock_price"
             android:inputType="numberDecimal"
             android:layout_weight="1"
             />
@@ -69,7 +123,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="4dp"
         android:layout_centerHorizontal="true"
-        android:text="CALCULATE"
+        android:text="@string/calculate"
         android:background="@android:color/darker_gray"
 
         />
@@ -82,35 +136,39 @@
         android:paddingRight="16dp"
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
+        android:paddingBottom="0dp"
         >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:background="#DCDCDC"
-            android:textSize="12sp"
-            android:text="Capital gain"
+            android:textSize="14sp"
+            android:text="@string/capital_gain"
             android:gravity="center"
             android:layout_weight="4"
+            android:textColor="#000000"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:gravity="center"
             android:layout_weight="3"
-            android:text="Selling rate for capital gain"
+            android:text="@string/selling_rate"
             android:background="#DCDCDC"
+            android:textColor="#000000"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:gravity="center"
             android:layout_weight="3"
-            android:text="Your gain"
+            android:text="@string/your_gain"
             android:background="#DCDCDC"
+            android:textColor="#000000"
             />
 
 
@@ -132,7 +190,7 @@
             android:layout_height="40dp"
             android:background="@android:color/darker_gray"
             android:textSize="32sp"
-            android:text="0%"
+            android:text="@string/zero"
             android:gravity="center"
             android:layout_weight="4"
             />
@@ -171,7 +229,7 @@
             android:layout_height="40dp"
             android:background="@android:color/darker_gray"
             android:textSize="32sp"
-            android:text="1%"
+            android:text="@string/one"
             android:gravity="center"
             android:layout_weight="4"
             />
@@ -210,7 +268,7 @@
             android:layout_height="40dp"
             android:background="@android:color/darker_gray"
             android:textSize="32sp"
-            android:text="5%"
+            android:text="@string/five"
             android:gravity="center"
             android:layout_weight="4"
             />
@@ -234,16 +292,80 @@
             android:background="#32cd32"
             />
 
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tiProcent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/femProcent"
+        android:padding="16dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/darker_gray"
+            android:textSize="32sp"
+            android:text="@string/teen"
+            android:gravity="center"
+            android:layout_weight="4"
+            />
 
+        <TextView
+            android:id="@+id/SalgskursTi"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#f0ffff"
+            />
+        <TextView
+            android:id="@+id/gevinst10"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#32cd32"
+            />
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/FemogTyveProcent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tiProcent"
+        android:padding="16dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/darker_gray"
+            android:textSize="32sp"
+            android:text="@string/twenty_five"
+            android:gravity="center"
+            android:layout_weight="4"
+            />
 
+        <TextView
+            android:id="@+id/SalgskursFemOgTyve"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#f0ffff"
+            />
+        <TextView
+            android:id="@+id/gevinst25"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:background="#32cd32"
+            />
 
-
-
-
-
-
-
+    </LinearLayout>
 
 </RelativeLayout>
